@@ -1,0 +1,15 @@
+class Solution {
+    fun solution(numbers: IntArray): IntArray {
+        var answer: IntArray = intArrayOf()
+        var plus: IntArray = intArrayOf()
+        for(i in 0 until numbers.size-1){
+            for(j in i+1 until numbers.size){
+                plus = plus.plus(numbers[i]+numbers[j])
+
+            }
+        }
+        answer = plus.distinct().toIntArray()
+        answer.sort()
+        return answer
+    }
+}
