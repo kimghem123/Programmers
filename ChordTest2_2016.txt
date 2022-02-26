@@ -1,0 +1,18 @@
+class Solution {
+    fun solution(a: Int, b: Int): String {
+        val date = arrayOf("THU","FRI","SAT","SUN","MON","TUE","WED")
+        val month = arrayOf(1,3,5,7,8,10,12)
+        var total_day = 0
+        
+        for(i in 1..a){
+            if(i == a) break
+            else if(month.contains(i) == true) total_day += 31
+            else if(i == 2) total_day += 29
+            else total_day += 30
+        }
+        total_day = total_day + b
+        var dayName = date[total_day%7]
+        var answer = dayName
+        return answer
+    }
+}
